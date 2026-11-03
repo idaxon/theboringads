@@ -38,6 +38,9 @@ export const metadata: Metadata = {
     shortcut: ["/favicon.ico"],
   },
   manifest: "/site.webmanifest",
+  verification: {
+    google: "fjsOIVp-f6VC6yXQbfkk5EB3jdcLw03FRFVfv8VazZI",
+  },
   openGraph: {
     title: "THE BORING ADS BY DAKSH — Creative Direction & Concepts Portfolio",
     description: "The creative direction & ad concepts portfolio of Daksh. We make boring ads unboring.",
