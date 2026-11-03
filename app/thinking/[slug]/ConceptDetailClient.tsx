@@ -2,16 +2,12 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
-import Image from "next/image";
 import {
   ArrowLeft,
   ArrowRight,
   ArrowUpRight,
   Brain,
-  BookOpen,
   Zap,
-  ExternalLink,
-  Flame,
   CheckCircle2,
   AlertTriangle,
   Lightbulb,
@@ -22,12 +18,6 @@ import BriefModal from "@/components/BriefModal";
 import {
   ThinkingConcept,
   THINKING_CONCEPTS,
-  SALT_IN_TEA_EXAMPLES,
-  SALT_IN_TEA_RULES,
-  SALT_VS_PURPLE_COW,
-  HONEST_ERROR_EXAMPLES,
-  HONEST_ERROR_RULES,
-  HONEST_ERROR_VS_SALT_IN_TEA,
 } from "@/lib/thinking";
 import ConceptVisual from "@/components/thinking/ConceptVisuals";
 
@@ -44,9 +34,6 @@ export default function ConceptDetailClient({ concept }: ConceptDetailClientProp
     THINKING_CONCEPTS[(currentIndex - 1 + THINKING_CONCEPTS.length) % THINKING_CONCEPTS.length];
   const nextConcept =
     THINKING_CONCEPTS[(currentIndex + 1) % THINKING_CONCEPTS.length];
-
-  const isSaltInTea = concept.slug === "the-salt-in-tea-technique";
-  const isHonestError = concept.slug === "the-honest-error";
 
   return (
     <main className="min-h-screen bg-[#F7F6F2] text-[#0A0A0A] flex flex-col justify-between selection:bg-[#0A0A0A] selection:text-[#DFFF00]">

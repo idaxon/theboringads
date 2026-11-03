@@ -80,30 +80,32 @@ export default function BoringMascot({
         xmlns="http://www.w3.org/2000/svg"
         className="w-full h-full overflow-visible"
       >
-        {/* Hair Tuft / Eyebrow spikes as seen in boringlogo.png */}
+        {/* Hair Tuft / Spikes radiating top-right as seen in official The Boring Ads logo */}
         {accentHair && (
-          <g stroke="currentColor" strokeWidth="6" strokeLinecap="round">
-            {/* Left spike */}
+          <g stroke="currentColor" strokeWidth="5.5" strokeLinecap="round">
+            {/* Inner spike */}
             <motion.line
-              x1="36"
-              y1="6"
-              x2="42"
-              y2="18"
+              x1="67"
+              y1="30"
+              x2="73"
+              y2="10"
               animate={{
-                y2: awake ? 16 : 19,
-                rotate: awake ? -5 : 0,
+                y2: awake ? 8 : 10,
+                x2: awake ? 75 : 73,
+                rotate: awake ? 3 : 0,
               }}
               transition={{ duration: 0.2 }}
             />
-            {/* Right spike */}
+            {/* Outer spike */}
             <motion.line
-              x1="58"
-              y1="4"
-              x2="52"
-              y2="18"
+              x1="76"
+              y1="38"
+              x2="90"
+              y2="20"
               animate={{
-                y2: awake ? 15 : 19,
-                rotate: awake ? 6 : 0,
+                y2: awake ? 17 : 20,
+                x2: awake ? 92 : 90,
+                rotate: awake ? 5 : 0,
               }}
               transition={{ duration: 0.2 }}
             />

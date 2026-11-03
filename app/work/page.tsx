@@ -3,8 +3,8 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowUpRight, ArrowLeft, Check, ThumbsUp, Sparkles, Film, Eye, Flame } from "lucide-react";
-import { CAMPAIGNS, Campaign } from "@/lib/campaigns";
+import { ArrowUpRight, ArrowLeft, ThumbsUp, Film } from "lucide-react";
+import { CAMPAIGNS } from "@/lib/campaigns";
 import Navbar from "@/components/sections/Navbar";
 import Footer from "@/components/sections/Footer";
 import BriefModal from "@/components/BriefModal";
@@ -106,7 +106,7 @@ export default function WorkVaultPage() {
                     : "bg-white hover:bg-[#DFFF00] text-[#0A0A0A]"
                 }`}
               >
-                {c.number} // {c.clientName}
+                {c.number} {"//"} {c.clientName}
               </button>
             ))}
           </div>
@@ -114,7 +114,7 @@ export default function WorkVaultPage() {
 
         {/* Detailed Concept Ad Cards */}
         <div className="space-y-24">
-          {filteredCampaigns.map((camp, idx) => (
+          {filteredCampaigns.map((camp) => (
             <article
               key={camp.slug}
               id={camp.slug}

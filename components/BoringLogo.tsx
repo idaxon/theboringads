@@ -171,7 +171,7 @@ export default function BoringLogo({
             DAKSH
           </span>
           <span className={`text-[8px] uppercase tracking-widest ml-1 ${isDark ? "text-white/40" : "text-[#0A0A0A]/40"}`}>
-            // CONCEPT STUDIO
+            {"// CONCEPT STUDIO"}
           </span>
         </div>
       </div>
