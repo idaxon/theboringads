@@ -1,0 +1,141 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #F7F6F2;
+  --foreground: #0A0A0A;
+  --acid: #DFFF00;
+  --font-space: 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-inter: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  background-color: #F7F6F2;
+  color: #0A0A0A;
+  scroll-behavior: auto; /* Let Lenis handle smooth scroll */
+}
+
+body {
+  background-color: #F7F6F2;
+  color: #0A0A0A;
+  font-family: var(--font-inter), sans-serif;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom Text Selection */
+::selection {
+  background-color: #0A0A0A;
+  color: #DFFF00;
+}
+
+/* Lenis Recommended CSS */
+html.lenis, html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
+
+/* Typography styles */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-space), sans-serif;
+  letter-spacing: -0.04em;
+}
+
+/* Fine pointer custom cursor hide native cursor */
+@media (pointer: fine) {
+  body.custom-cursor-active a,
+  body.custom-cursor-active button,
+  body.custom-cursor-active [role="button"],
+  body.custom-cursor-active input,
+  body.custom-cursor-active textarea,
+  body.custom-cursor-active select,
+  body.custom-cursor-active label {
+    cursor: none !important;
+  }
+}
+
+/* Brutalist borders */
+.border-boring {
+  border: 1.5px solid #0A0A0A;
+}
+
+.border-b-boring {
+  border-bottom: 1.5px solid #0A0A0A;
+}
+
+.border-t-boring {
+  border-top: 1.5px solid #0A0A0A;
+}
+
+.border-r-boring {
+  border-right: 1.5px solid #0A0A0A;
+}
+
+.border-l-boring {
+  border-left: 1.5px solid #0A0A0A;
+}
+
+/* Text swap hover utility */
+.text-swap-container {
+  display: inline-flex;
+  position: relative;
+  overflow: hidden;
+  vertical-align: middle;
+}
+
+.text-swap-primary {
+  display: inline-block;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.text-swap-secondary {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  display: inline-block;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.group:hover .text-swap-primary,
+button:hover .text-swap-primary,
+a:hover .text-swap-primary {
+  transform: translateY(-100%);
+}
+
+.group:hover .text-swap-secondary,
+button:hover .text-swap-secondary,
+a:hover .text-swap-secondary {
+  transform: translateY(-100%);
+}
+
+/* Reduce motion override */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
